@@ -1,4 +1,16 @@
 var bigInt = require("big-integer");
+
+mem = []
+function FiboMem(n){
+    if (mem[n]!= null){
+        return mem[n];
+    }
+    else {
+        mem[n] = FiboMem(n-1).add(FiboMem(n-2));
+        return mem[n]
+    }
+}
+
 module.exports = async function (context, req) {
     context.log('JavaScript HTTP trigger function processed a request.');
 
@@ -14,11 +26,7 @@ module.exports = async function (context, req) {
     else if (nth === 1)
         answer = nth_1
     else {
-        for (var i = 0; i < nth - 1; i++) {
-            answer = nth_2.add(nth_1)
-            nth_2 = nth_1
-            nth_1 = answer
-        }
+        answer = FiboMem(nth);
     }
 
     context.res = {

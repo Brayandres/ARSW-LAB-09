@@ -9,42 +9,42 @@
 ### Dependencias
 * Cree una cuenta gratuita dentro de Azure.
   
-  ![](Evidencia/Cuenta.jpg)
+  ![](Evidencias/Cuenta.jpg)
   
 ### Creacion de la Function App en Azure
 1. Creamos un nuevo recurso Function App. La configuración inicial es esta.
    
-   ![](Evidencia/CreationStep1.jpg)
+   ![](Evidencias/CreationStep1.jpg)
    
 3. En el apartado de "Hospedaje" dejamos la siguiente configuración.
    
-   ![](Evidencia/CreationStep2.jpg)
+   ![](Evidencias/CreationStep2.jpg)
    
 4. El resto de apartados los dejamos como estan. Si estamos seguros le damos en "crear".
    
-   ![](Evidencia/CreationStep3.jpg)
+   ![](Evidencias/CreationStep3.jpg)
    
 5. Cuando el recurso ya esté implementado deberíamos poder ver algo así.
    
-   ![](Evidencia/Created.jpg)
+   ![](Evidencias/Created.jpg)
    
 
 ### Despliegue desde Viusla Studio Code
 1. Buscamos en la market Place de extensiones de Visual Studio la extensión "Azure Functions" y la instalamos.
    
-   ![](Evidencia/VSC-AzureFunctions.jpg)
+   ![](Evidencias/VSC-AzureFunctions.jpg)
    
 2. También va a ser necesaria la instalación de la extensión "Azure Acount" para poder loguearnos en Azure.
    
-   ![](Evidencia/VSC-AzureAccount.jpg)
+   ![](Evidencias/VSC-AzureAccount.jpg)
    
 3. Una vez nos hallamos logueado en Azure, verficamos que nuestra Fucntion App creada anteriormente nos aparece.
    
-   ![](Evidencia/FunctionInVSC.jpg)
+   ![](Evidencias/FunctionInVSC.jpg)
    
 4. Ahora buscamos la carpeta donde tenemos guardada la función que desplegaremos. Haremos Click derecho sobre la carpeta contenedora y vamos a la opción de "Deploy to Function App".
    
-   ![](Evidencia/ForDeploy.jpg)
+   ![](Evidencias/ForDeploy.jpg)
    
 
 ### Probando la Función.
@@ -52,7 +52,7 @@
 
    Resultados
    
-   ![](Evidencia/Test1.jpg)
+   ![](Evidencias/Test1.jpg)
 
     Notamos que los tiempos de respuesta son bastante altos, esto porque al no tener memorización la función siempre necesita del valor anterior y es necesario recorrer todas las soluciones anteriores al valor que estamos calculando.
     Como ventaja en este punto, es que se puede realizar el cálculo para valores relativamente grandes.
@@ -61,11 +61,11 @@
   
      + Implementación
       
-        ![](Evidencia/Implementation.jpg)
+        ![](Evidencias/Implementation.jpg)
       
      + Resultados
 
-        ![](Evidencia/Test2.jpg)
+        ![](Evidencias/Test2.jpg)
    
       En el caso de la función con memorización, se están calculando resultados una sola vez, de manera que cuando haya un resultado que ya hasido calculado, este simplemente se devuelve porque ya está almacenado. También, como la función es recursiva la cantidad de valores recalculados es bastante alta, pero con memorización resolvemos esto y evitamos tener que extendernos en todas las ramas a todos los nodos de soluciones triviales.
       Aunque aquí los tiempos se redujeron notablemente, como desventaja tenemos que debido a los límites de recursión no se puede calcular para valores muy grandes.
